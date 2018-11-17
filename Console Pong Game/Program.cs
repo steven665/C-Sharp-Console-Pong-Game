@@ -10,7 +10,7 @@ namespace Console_Pong_Game
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(76, 30);
+            Console.SetWindowSize(152, 30);
             Game g = new Game();
             g.Run();
         }

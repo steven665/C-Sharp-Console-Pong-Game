@@ -10,9 +10,13 @@ namespace Console_Pong_Game
     abstract class Board
     {
         Point _position;
-        public Board(ConsoleKey side, Point p)
+        Point _previousPosition;
+        protected int timeSinceLastMove;
+        protected int timeBetweenMoves;
+        public Board()
         {
-                
+            timeBetweenMoves = 33;
+            timeSinceLastMove = 0;
         }
         public Point position
         {
@@ -23,17 +27,40 @@ namespace Console_Pong_Game
             }
             set
             {
+                if(value.Y < Console.WindowHeight - 5 && value.Y > 4)
                 _position = value;
+                return;
             }
             
         }
-        virtual public void update()
+        public Point previousPosition
         {
+            get
+            {
+                return _previousPosition;
 
+            }
+            set
+            {
+                if (value.Y < Console.WindowHeight - 5 && value.Y > 4)
+                    _previousPosition = value;
+                return;
+            }
+
+        }
+        virtual public void update(int deltaTimeMS)
+        {
+            
         }
         virtual public void draw()
         {
-
+            Console.SetCursorPosition(position.X, position.Y);
+            Console.Write('|');
+        }
+        virtual public void unDraw()
+        {
+            Console.SetCursorPosition(previousPosition.X, previousPosition.Y);
+            Console.Write(' ');
         }
     }
 }
