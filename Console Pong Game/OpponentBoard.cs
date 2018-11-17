@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Console_Pong_Game
 {
-    class Program
+    class OpponentBoard : Board
     {
-        static void Main(string[] args)
+        public OpponentBoard(ConsoleKey side, Point p) : base(side,p)
         {
-            Console.SetWindowSize(76, 30);
-            Game g = new Game();
-            g.Run();
+            
         }
     }
 }
