@@ -20,14 +20,21 @@ namespace Console_Pong_Game
                 position = new Point(3, Console.WindowHeight / 2 - 1);
             }
         }
-        public override void update(int deltaTimeMS)
+        public void update(int deltaTimeMS, Ball b)
         {
             timeSinceLastMove += deltaTimeMS;
             if (timeBetweenMoves < timeSinceLastMove)
             {
                 previousPosition = position;
                 unDraw();
-                position = new Point(position.X, position.Y - 1);
+                if (position.Y < b.ballPosition.Y)
+                {
+                    position = new Point(position.X, position.Y + 1);
+                }
+                if (position.Y > b.ballPosition.Y)
+                {
+                    position = new Point(position.X, position.Y - 1);
+                }
 
                 timeSinceLastMove -= timeBetweenMoves;
 

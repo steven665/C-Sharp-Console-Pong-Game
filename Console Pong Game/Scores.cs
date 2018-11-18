@@ -20,7 +20,7 @@ namespace Console_Pong_Game
 
         public void update(ConsoleKey k)
         {
-            if(k == playerSide)
+            if (k == playerSide)
             {
                 playerScore++;
             }
@@ -34,13 +34,13 @@ namespace Console_Pong_Game
             if (k == ConsoleKey.L)
             {
                 string s = $"Player score : {playerScore}  |  Opponent score : {opponetScore}";
-                Console.SetCursorPosition(Console.WindowWidth / 2 - (s.Length / 2 - 1), Console.WindowHeight - 1);
+                Console.SetCursorPosition(Console.WindowWidth / 2 - (s.Length / 2 + 2), Console.WindowHeight - 3);
                 Console.Write(s);
             }
             else
             {
                 string s = $"Opponent score : {opponetScore}  |  Player score : {playerScore}";
-                Console.SetCursorPosition(Console.WindowWidth / 2 - (s.Length / 2 - 1), Console.WindowHeight - 1);
+                Console.SetCursorPosition(Console.WindowWidth / 2 - (s.Length / 2 + 2 ), Console.WindowHeight - 3);
                 Console.Write(s);
             }
         }

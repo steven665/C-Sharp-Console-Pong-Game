@@ -15,7 +15,7 @@ namespace Console_Pong_Game
         protected int timeBetweenMoves;
         public Board()
         {
-            timeBetweenMoves = 33;
+            timeBetweenMoves = 110;
             timeSinceLastMove = 0;
         }
         public Point position
@@ -23,15 +23,15 @@ namespace Console_Pong_Game
             get
             {
                 return _position;
-            
+
             }
             set
             {
-                if(value.Y < Console.WindowHeight - 5 && value.Y > 4)
-                _position = value;
+                if (value.Y < Console.WindowHeight - 5 && value.Y > 4)
+                    _position = value;
                 return;
             }
-            
+
         }
         public Point previousPosition
         {
@@ -50,7 +50,7 @@ namespace Console_Pong_Game
         }
         virtual public void update(int deltaTimeMS)
         {
-            
+
         }
         virtual public void draw()
         {
