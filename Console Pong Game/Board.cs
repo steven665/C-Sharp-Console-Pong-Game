@@ -54,12 +54,20 @@ namespace Console_Pong_Game
         }
         virtual public void draw()
         {
+            Console.SetCursorPosition(position.X, position.Y - 1);
+            Console.Write('|');
             Console.SetCursorPosition(position.X, position.Y);
+            Console.Write('|');
+            Console.SetCursorPosition(position.X, position.Y + 1);
             Console.Write('|');
         }
         virtual public void unDraw()
         {
+            Console.SetCursorPosition(previousPosition.X, previousPosition.Y - 1);
+            Console.Write(' ');
             Console.SetCursorPosition(previousPosition.X, previousPosition.Y);
+            Console.Write(' ');
+            Console.SetCursorPosition(previousPosition.X, previousPosition.Y + 1);
             Console.Write(' ');
         }
     }

@@ -13,7 +13,7 @@ namespace Console_Pong_Game
         static void Main(string[] args)
         {
             Rectangle resolution = Screen.PrimaryScreen.Bounds;
-            Console.SetWindowSize(80, 20);
+            Console.SetWindowSize(66, 30);
             Game g = new Game();
             g.Run();
         }
